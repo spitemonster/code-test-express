@@ -1,0 +1,22 @@
+{
+  "name": "members_api",
+  "version": "1.0.0",
+  "description": "Express app to provide a basic API for code tests.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node_modules/.bin/mocha"
+  },
+  "author": "Jesse Hixson <jesse.hixson@carney.co>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "knex": "^0.12.6",
+    "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0"
+  }
+}
