@@ -30,9 +30,11 @@ exports.seed = function(knex, Promise) {
     return Promise.all(inserts);
   }).then(function() {
     return knex('members').del().then(function () {
+      return knex.table('subscriptions').pluck('id');
+    }).then(function(subscription_ids) {
       var members = [];
       for(var i = 0; i < 10; i++) {
-        members.push(knex('members').insert({name: faker.name.findName(), email: faker.internet.email(), phone: faker.phone.phoneNumber(), created_at: knex.fn.now(), updated_at: knex.fn.now()}));
+        members.push(knex('members').insert({name: faker.name.findName(), email: faker.internet.email(), phone: faker.phone.phoneNumber(), subscription_id: _.sample(subscription_ids), created_at: knex.fn.now(), updated_at: knex.fn.now()}));
       }
       return Promise.all(members);
     });
