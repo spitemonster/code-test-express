@@ -1,8 +1,9 @@
 var express = require('express');
 var app = express();
+var cors = require('cors');
 var Members = require('./models/members');
 
-app.get('/members', function (req, res) {
+app.get('/members', cors(), function (req, res) {
   Members.fetchAll().then(function (members) {
     res.json({error: false, data: members.toJSON()});
   })
