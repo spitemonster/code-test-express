@@ -2,7 +2,7 @@
 exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.table('members', function (table) {
-      table.integer('subscription_id');
+      table.integer('subscription_id').references('subscriptions.id');
     })
   ]);
 };

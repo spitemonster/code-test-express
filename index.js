@@ -1,10 +1,10 @@
 var express = require('express');
 var app = express();
-var knex = require('./db/knex');
+var Members = require('./models/members');
 
 app.get('/members', function (req, res) {
-  knex.select().from('members').then(function(rows) {
-    res.json(rows);
+  Members.fetchAll().then(function (members) {
+    res.json({error: false, data: members.toJSON()});
   })
   .catch(function(error) {
     console.error(error)
