@@ -21,7 +21,8 @@ describe('GET /members', function() {
     chai.request(server).get('/members').end(function(err, res) {
       res.should.have.status(200);
       res.should.be.json;
-      res.body.should.be.a('array');
+      res.body.data.should.be.a('array');
+      res.body.data.length.should.equal(10);
       done();
     });
   });
