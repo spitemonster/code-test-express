@@ -1,18 +1,13 @@
-
-exports.up = function(knex, Promise) {
-  return Promise.all([
-    knex.schema.createTable('members', function (table) {
-      table.increments();
-      table.string('name');
-      table.string('email');
-      table.string('phone');
-      table.timestamps();
-    })
-  ]);
+exports.up = function(knex) {
+  return knex.schema.createTable('members', function(table) {
+    table.increments();
+    table.string('name');
+    table.string('email');
+    table.string('phone');
+    table.timestamps();
+  });
 };
 
-exports.down = function(knex, Promise) {
-  return Promise.all([
-    knex.schema.dropTable('members')
-  ]);
+exports.down = function(knex) {
+  return knex.schema.dropTable('members');
 };
