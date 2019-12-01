@@ -5,24 +5,23 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node_modules/.bin/mocha",
-    "migrate": "node_modules/.bin/knex migrate:latest",
-    "seed": "node_modules/.bin/knex seed:run"
+    "test": "mocha",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run"
   },
   "author": "Jesse Hixson <jesse.hixson@carney.co>",
   "license": "MIT",
   "dependencies": {
-    "bookshelf": "^0.10.3",
-    "cors": "^2.8.1",
-    "express": "^4.14.0",
-    "knex": "^0.12.6",
-    "sqlite3": "^3.1.8"
+    "bookshelf": "^1.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.20.1",
+    "sqlite3": "^4.1.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
     "faker": "^3.1.0",
-    "lodash": "^4.17.4",
     "mocha": "^3.2.0"
   }
 }

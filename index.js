@@ -1,21 +1,16 @@
-var express = require('express');
-var app = express();
-var cors = require('cors');
-var Members = require('./models/members');
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const Member = require('./models/member');
 
-app.get('/members', cors(), function (req, res) {
-  Members.fetchAll().then(function (members) {
-    res.json({error: false, data: members.toJSON()});
-  })
-  .catch(function(error) {
-    console.error(error)
-  });
+app.get('/members', cors(), (_req, res) => {
+  Member.fetchAll()
+    .then(members => res.json({ error: false, data: members.toJSON() }))
+    .catch(error => console.error(error));
 });
 
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-app.listen(port, function () {
-  console.log('App listening on port: ' + port);
-});
+app.listen(port, () => console.log('App listening on port: ' + port));
 
 module.exports = app;
