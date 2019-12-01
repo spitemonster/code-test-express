@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha",
+    "test": "PORT=4000 mocha",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run"
   },
