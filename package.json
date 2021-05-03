@@ -12,11 +12,11 @@
   "author": "Jesse Hixson <jesse.hixson@carney.co>",
   "license": "MIT",
   "dependencies": {
-    "bookshelf": "^1.0.1",
+    "bookshelf": "^1.2.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "knex": "^0.19.4",
-    "sqlite3": "^4.1.0"
+    "knex": "^0.20.0",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
