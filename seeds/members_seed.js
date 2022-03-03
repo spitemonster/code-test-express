@@ -1,4 +1,4 @@
-const faker = require('@faker-js/faker');
+const { faker } = require('@faker-js/faker');
 
 function baseRandom(lower, upper) {
   return lower + Math.floor(Math.random() * (upper - lower + 1));
